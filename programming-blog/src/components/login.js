@@ -19,6 +19,7 @@ class Login extends React.Component {
     Axios.post("user/login", user).then(response => {
       localStorage.setItem("Token", response.data.token);
       localStorage.setItem("Name", response.data.user.name);
+      console.log(response);
       this.props.login(response.data.token);
       window.location.replace('/')
     }).catch(response => {

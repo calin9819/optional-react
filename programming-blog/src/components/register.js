@@ -37,6 +37,7 @@ class Register extends Component {
   registerUserReq(user) {
     Axios.post("user/register", user)
       .then(response => {
+        console.log(response);
         window.location.replace("/login");
       })
       .catch(error => {

@@ -71,7 +71,7 @@ class App extends React.Component {
                     <span>Hello, {localStorage.getItem("Name")}!</span>
                   </li>
                   <li>
-                    <a classNameName="nav-link" onClick={this.logout}>
+                    <a className="nav-link" onClick={this.logout}>
                       Log out
                     </a>
                   </li>
