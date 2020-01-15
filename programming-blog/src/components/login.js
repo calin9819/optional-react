@@ -29,8 +29,11 @@ class Login extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>{this.props.title}</h1>
-        {this.props.children}
+        <div className="panel panel-primary">
+          <div className="panel-heading">
+            <h1>{this.props.title}</h1>
+          </div>
+          <div className="panel-body">
         <div className="border p-4">
           <div className="form-group">
             <label>Email</label>
@@ -49,15 +52,22 @@ class Login extends React.Component {
               placeholder="Password .."
             />
           </div>
-          <button className="btn btn-success" onClick={this.login}>
+          <button className="btn btn-primary" onClick={this.login}>
             Login
           </button>
-          <button style={{ marginLeft: "10px"}} className="btn btn-success" onClick={() => {
+          <button style={{ marginLeft: "10px"}} className="btn btn-primary" onClick={() => {
             window.location.replace("/register");
           }}>
             Register
           </button>
+          <button style={{ marginLeft: "10px"}} className="btn btn-info" onClick={() => {
+            window.location.replace("/");
+          }}>
+            Go back
+          </button>
         </div>
+      </div>
+      </div>
       </div>
     );
   }

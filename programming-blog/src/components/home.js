@@ -37,50 +37,6 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <nav className="navbar navbar-inverse">
-            <div className="container-fluid">
-              <div className="navbar-header">
-                <a className="navbar-brand" href="#">
-                  Programming blog
-                </a>
-              </div>
-              <ul className="nav navbar-nav">
-                <li className="active">
-                  <a href="/">Home</a>
-                </li>
-              </ul>
-              )}
-              {!this.state.isLoggedIn && (
-                <ul className="nav navbar-nav navbar-right">
-                  <li>
-                    <a href="/register">
-                      <span className="glyphicon glyphicon-user"></span>{" "}
-                      Register
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/login">
-                      <span className="glyphicon glyphicon-log-in"></span> Login
-                    </a>
-                  </li>
-                </ul>
-              )}
-              {this.state.isLoggedIn && (
-                <ul className="nav navbar-nav navbar-right">
-                  <li>
-                    <span>Hello, {localStorage.getItem("Name")}!</span>
-                  </li>
-                  <li>
-                    <a classNameName="nav-link" onClick={this.logout}>
-                      Log out
-                    </a>
-                  </li>
-                </ul>
-              )}
-            </div>
-          </nav>
-        </div>
         <div className="container">
           <div className="row">
             <button
@@ -90,14 +46,6 @@ class Home extends React.Component {
               }}
             >
               Add a new article
-            </button>
-            <button
-              className="btn btn-primary"
-              onClick={() => {
-                console.log(this.state);
-              }}
-            >
-              Show state
             </button>
           </div>
           <br />

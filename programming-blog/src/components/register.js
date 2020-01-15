@@ -49,58 +49,77 @@ class Register extends Component {
 
     return (
       <div className="container">
-        <h1>{this.props.title}</h1>
-        <div className="border p-4">
-          {this.state.userInserted}
+        <div className="panel panel-primary">
+          <div className="panel-heading">
+            <h1>{this.props.title}</h1>
+          </div>
+          <div className="panel-body">
+            <div className="border p-4">
+              {this.state.userInserted}
 
-          <div className="form-group">
-            <label>
-              Name
-            </label>
-            <input
-              className="form-control"
-              placeholder="Name .."
-              onChange={ev => this.setState({ name: ev.target.value })}
-            />
+              <div className="form-group">
+                <label>Name</label>
+                <input
+                  className="form-control"
+                  placeholder="Name .."
+                  onChange={ev => this.setState({ name: ev.target.value })}
+                />
+              </div>
+              <div className="form-group">
+                <label>Email</label>
+                <input
+                  className="form-control"
+                  placeholder="Email .."
+                  onChange={ev => this.setState({ email: ev.target.value })}
+                />
+              </div>
+              <div className="form-group">
+                <label>Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Password .."
+                  onChange={ev => this.setState({ password: ev.target.value })}
+                />
+              </div>
+              <div className="form-group">
+                <label>Password Again</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Password .."
+                  onChange={ev =>
+                    this.setState({ confirm_password: ev.target.value })
+                  }
+                />
+              </div>
+
+              <button
+                className="btn btn-primary"
+                onClick={() => this.register()}
+              >
+                Register
+              </button>
+              <button
+                style={{ marginLeft: "10px" }}
+                className="btn btn-info"
+                onClick={() => {
+                  window.location.replace("/");
+                }}
+              >
+                Go back
+              </button>
+              <span style={{ marginLeft: "10px" }}>
+                Already have an account? <a href="/login">Login instead</a>
+              </span>
+            </div>
+            <ul>
+              {users.map(item => {
+                return <li key={item.email}>{item.name}</li>;
+              })}
+            </ul>
           </div>
-          <div className="form-group">
-            <label>Email</label>
-            <input
-              className="form-control"
-              placeholder="Email .."
-              onChange={ev => this.setState({ email: ev.target.value })}
-            />
-          </div>
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Password .."
-              onChange={ev => this.setState({ password: ev.target.value })}
-            />
-          </div>
-          <div className="form-group">
-            <label>Password Again</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Password .."
-              onChange={ev =>
-                this.setState({ confirm_password: ev.target.value })
-              }
-            />
-          </div>
-          <button className="btn btn-success" onClick={() => this.register()}>
-            Register
-          </button>
-          <span style={{ marginLeft: "10px" }}>Already have an account? <a href="/login">Login instead</a></span>
         </div>
-        <ul>
-          {users.map(item => {
-            return <li key={item.email}>{item.name}</li>;
-          })}
-        </ul>
       </div>
     );
   }

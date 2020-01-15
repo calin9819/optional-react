@@ -123,8 +123,11 @@ export default class NewArticle extends React.Component {
 
     return (
       <div className="container">
-        <h1>{this.props.title}</h1>
-        {this.props.children}
+        <div className="panel panel-primary">
+          <div className="panel-heading">
+            <h1>{this.props.title}</h1>
+          </div>
+          <div className="panel-body">
         <div className="border p-4">
           <div className="form-group">
             <label>Title</label>
@@ -162,12 +165,19 @@ export default class NewArticle extends React.Component {
             </div>
           </div>
           <button
-            className="btn btn-success"
+            className="btn btn-primary"
             onClick={this.props.action == "Add" ? this.add : this.edit}
           >
             {this.props.action}
           </button>
+          <button style={{ marginLeft: "10px"}} className="btn btn-info" onClick={() => {
+            window.location.replace("/");
+          }}>
+            Go back
+          </button>
         </div>
+      </div>
+      </div>
       </div>
     );
   }

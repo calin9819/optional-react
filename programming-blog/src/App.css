@@ -84,3 +84,7 @@
 .RichEditor-activeButton {
   color: #5890ff;
 }
+
+body {
+  background-color: #ccc;
+}
